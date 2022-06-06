@@ -1,5 +1,5 @@
+import React from "react";
 import { Popover } from "@headlessui/react";
-
 export const Button = () => {
   return (
     <Popover className="relative">
@@ -12,8 +12,6 @@ export const Button = () => {
           <a href="/security">Security</a>
           <a href="/integrations">Integrations</a>
         </div>
-
-        <img src="/solutions.jpg" alt="" />
       </Popover.Panel>
     </Popover>
   );
