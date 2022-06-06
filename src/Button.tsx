@@ -9,7 +9,7 @@ const people = [
   { id: 5, name: "Katelyn Rohan", unavailable: false },
 ];
 
-function Button() {
+export function Button() {
   const [selectedPerson, setSelectedPerson] = useState(people[0]);
 
   return (
