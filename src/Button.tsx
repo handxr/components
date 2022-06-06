@@ -1,31 +1,20 @@
-import { useState } from "react";
-import { Listbox } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
 
-const people = [
-  { id: 1, name: "Durward Reynolds", unavailable: false },
-  { id: 2, name: "Kenton Towne", unavailable: false },
-  { id: 3, name: "Therese Wunsch", unavailable: false },
-  { id: 4, name: "Benedict Kessler", unavailable: true },
-  { id: 5, name: "Katelyn Rohan", unavailable: false },
-];
-
-export function Button() {
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
-
+export const Button = () => {
   return (
-    <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-      <Listbox.Button>{selectedPerson.name}</Listbox.Button>
-      <Listbox.Options>
-        {people.map((person) => (
-          <Listbox.Option
-            key={person.id}
-            value={person}
-            disabled={person.unavailable}
-          >
-            {person.name}
-          </Listbox.Option>
-        ))}
-      </Listbox.Options>
-    </Listbox>
+    <Popover className="relative">
+      <Popover.Button>Solutions</Popover.Button>
+
+      <Popover.Panel className="absolute z-10">
+        <div className="grid grid-cols-2">
+          <a href="/analytics">Analytics</a>
+          <a href="/engagement">Engagement</a>
+          <a href="/security">Security</a>
+          <a href="/integrations">Integrations</a>
+        </div>
+
+        <img src="/solutions.jpg" alt="" />
+      </Popover.Panel>
+    </Popover>
   );
-}
+};
